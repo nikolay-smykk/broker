@@ -11,6 +11,7 @@
     "@types/node": "^12.20.33",
     "@types/react": "^17.0.30",
     "@types/react-dom": "^17.0.9",
+    "antd": "^4.16.13",
     "babel-eslint": "^10.1.0",
     "craco-less": "^1.20.0",
     "eslint-plugin-import": "^2.25.2",
