@@ -1,27 +1,5 @@
-interface Request {
-  url: string;
-  fullUrl: string;
-  method: string;
-  body: unknown;
-  headers: unknown;
-}
-
-interface SuccessResponse {
-  url: string;
-  fullUrl: string;
-  status: number;
-  method: string;
-  response: unknown;
-}
-
-interface FailedResponse {
-  url: string;
-  method: string;
-  fullUrl: string;
-  status: number;
-  message: string;
-  err: Error;
-}
+import { FailedResponse, SuccessResponse } from '../../../model/Response';
+import { Request } from '../../../model/Request';
 
 type ObjForLogger = {
   [key: string]: unknown;
@@ -71,7 +49,7 @@ export const loggerRequest = ({
   method = 'GET',
 }: Request) => {
   console.groupCollapsed(
-    '%c API REQUEST ' + `%c ${url}`,
+    `%c API REQUEST  %c ${url}`,
     'background: #FFC737; color: black; font-weight: bold',
     'background: transparent; color: #FFC737;'
   );

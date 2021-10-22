@@ -21,26 +21,17 @@ export function request(
       queryStr = serialize(query);
     }
 
-    const requiredHeaders = [url, method, data];
-
-    const allHeaders = {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      ...headers,
-      ...requiredHeaders,
-    };
-
-    const fullUrl = `${process.env.REACT_APP_DOMAIN}${url}${queryStr}`;
+    const fullUrl = `${process.env.REACT_APP_DOMAIN}${url}`;
     loggerRequest({
       url: `${url}${queryStr}`,
       method,
       body: data,
-      headers: allHeaders,
+      headers: [],
       fullUrl,
     });
     fetch(fullUrl, {
       method: method || 'GET',
-      headers: allHeaders,
+
       body: parseRequestBody(method, data),
     })
       .then(checkStatus())
