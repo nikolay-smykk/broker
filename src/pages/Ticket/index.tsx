@@ -4,20 +4,38 @@ import { useStore } from 'effector-react';
 
 import { Components } from '../../components';
 
-import { $dataTicker, getTicker, getDataTikeckerFx } from '../../store/ticker';
+import {
+  $dataTicker,
+  getTicker,
+  getDataTikeckerFx,
+  $dataTickerError,
+} from '../../store/ticker';
 
-import { Spin } from 'antd';
+import { message, Spin } from 'antd';
 
 export const Ticket = () => {
   const dataTicker = useStore($dataTicker);
   const loading = useStore(getDataTikeckerFx.pending);
+  const dataTickerError = useStore($dataTickerError);
+  console.log('Error', dataTickerError);
+  const error = (text: string) => {
+    Components.MessageError({ text });
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
       getTicker();
+      console.log('dataTicker', dataTicker);
+      if (dataTickerError || dataTicker.error) {
+        dataTickerError ? error(dataTickerError) : error(dataTicker.error);
+      }
     }, 5000);
     return () => clearTimeout(timer);
-  }, [dataTicker]);
+  }, [dataTicker, dataTickerError]);
+
+  useEffect(() => {
+    getTicker();
+  }, []);
 
   return (
     <>

@@ -10,7 +10,7 @@ import {
 } from '.';
 
 $dataTicker.on(getDataTikeckerFx.doneData, (_, data) => data);
-$dataTickerError.on(getDataTikeckerFx.failData, (failData) => failData);
+$dataTickerError.on(getDataTikeckerFx.failData, (_, { message }) => message);
 
 sample({
   clock: getTicker,
