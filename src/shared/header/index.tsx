@@ -1,3 +1,11 @@
+import { Link } from 'react-router-dom';
+
 export const HeaderPage = () => {
-  return <div>Header</div>;
+  return (
+    <div>
+      <Link to='/ticket'>Ticket</Link>
+
+      <Link to='/'>AboutUs</Link>
+    </div>
+  );
 };
