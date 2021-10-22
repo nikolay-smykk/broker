@@ -1,10 +1,12 @@
 import { Shared } from '../../shared';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useStore } from 'effector-react';
+
+import { Components } from '../../components';
 
 import { $dataTicker, getTicker, getDataTikeckerFx } from '../../store/ticker';
 
-import { Button, Modal, Spin } from 'antd';
+import { Spin } from 'antd';
 
 export const Ticket = () => {
   const dataTicker = useStore($dataTicker);
@@ -26,8 +28,12 @@ export const Ticket = () => {
           ) : (
             Object.keys(dataTicker ? dataTicker : {}).map((el, i) => (
               <li key={dataTicker[el].id}>
-                <Button type='primary'>{dataTicker[el].id}</Button>
-                <Button type='primary'>{dataTicker[el].last}</Button>
+                <Components.Modal
+                  title={el}
+                  last={dataTicker[el].last}
+                  highestBid={dataTicker[el].highestBid}
+                  percentChange={dataTicker[el].percentChange}
+                />
               </li>
             ))
           )}
