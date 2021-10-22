@@ -14,10 +14,13 @@
     "antd": "^4.16.13",
     "babel-eslint": "^10.1.0",
     "craco-less": "^1.20.0",
+    "effector": "^22.1.2",
+    "effector-react": "^22.0.4",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.26.1",
     "i18next": "^21.3.2",
+    "patronum": "^1.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-i18next": "^11.12.0",
@@ -48,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.3.1"
   }
 }
