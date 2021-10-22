@@ -1,10 +1,25 @@
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import './App.less';
-import { useTranslation } from 'react-i18next';
-import { Shared } from './shared';
+import { AboutUs } from './pages/AboutUs';
+import { Ticket } from './pages/Ticket';
+import './store/init';
 
 const App = () => {
-  const { t } = useTranslation();
-  return <Shared.Layout>{t('Headers.Hello')}</Shared.Layout>;
+  return (
+    <>
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <AboutUs />
+          </Route>
+          <Route exact path='/ticket'>
+            <Ticket />
+          </Route>
+        </Switch>
+      </Router>
+    </>
+  );
 };
 
 export default App;
