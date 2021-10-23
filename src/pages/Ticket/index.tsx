@@ -22,6 +22,7 @@ export const Ticket = () => {
     Components.MessageError({ text });
   };
 
+  // TODO need memo for rerender
   useEffect(() => {
     const timer = setTimeout(() => {
       getTicker();
