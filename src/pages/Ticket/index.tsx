@@ -23,6 +23,8 @@ export const Ticket = () => {
   };
 
   // TODO need memo for rerender
+
+  // suspense
   useEffect(() => {
     const timer = setTimeout(() => {
       getTicker();
