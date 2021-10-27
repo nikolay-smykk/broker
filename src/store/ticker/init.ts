@@ -2,20 +2,20 @@ import { sample } from 'effector';
 // import { delay } from 'patronum/delay';
 
 import {
-  getDataTikeckerFx,
+  getDataTickerFx,
   getTicker,
-  $comandTicker,
+  $commandTicker,
   $dataTicker,
   $dataTickerError,
 } from '.';
 
-$dataTicker.on(getDataTikeckerFx.doneData, (_, data) => data);
-$dataTickerError.on(getDataTikeckerFx.failData, (_, { message }) => message);
+$dataTicker.on(getDataTickerFx.doneData, (_, data) => data);
+$dataTickerError.on(getDataTickerFx.failData, (_, { message }) => message);
 
 sample({
   clock: getTicker,
-  source: $comandTicker,
-  target: getDataTikeckerFx,
+  source: $commandTicker,
+  target: getDataTickerFx,
 });
 
 // delay({

@@ -7,7 +7,7 @@ import { Components } from '../../components';
 import {
   $dataTicker,
   getTicker,
-  getDataTikeckerFx,
+  getDataTickerFx,
   $dataTickerError,
 } from '../../store/ticker';
 
@@ -15,7 +15,7 @@ import {  Spin } from 'antd';
 
 export const Ticket = () => {
   const dataTicker = useStore($dataTicker);
-  const loading = useStore(getDataTikeckerFx.pending);
+  const loading = useStore(getDataTickerFx.pending);
   const dataTickerError = useStore($dataTickerError);
   console.log('Error', dataTickerError);
   const error = (text: string) => {
