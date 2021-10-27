@@ -11,7 +11,7 @@ import {
   $dataTickerError,
 } from '../../store/ticker';
 
-import { message, Spin } from 'antd';
+import {  Spin } from 'antd';
 
 export const Ticket = () => {
   const dataTicker = useStore($dataTicker);
@@ -24,7 +24,7 @@ export const Ticket = () => {
 
   // TODO need memo for rerender
 
-  // suspense
+  // TODO suspense
   useEffect(() => {
     const timer = setTimeout(() => {
       getTicker();
