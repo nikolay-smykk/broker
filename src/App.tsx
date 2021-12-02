@@ -1,12 +1,10 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.less';
-import { Home } from './pages/Home';
-import { Product } from './pages/Product';
-import { Cart } from './pages/Сart';
-import { Catalog } from './pages/Сatalog';
+import { Pages } from './pages';
 
 const App = () => {
+  const { Home, Product, Cart, Catalog } = Pages;
   return (
     <>
       <Router>
