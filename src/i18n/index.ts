@@ -6,6 +6,9 @@ const resources = {
       Headers: {
         Hello: 'Welcome to React and react-i18next',
         AboutUs: 'О Нас',
+        Home: 'главная',
+        Categories: 'категории',
+        Cart: 'корзина',
       },
     },
   },
