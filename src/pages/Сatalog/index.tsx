@@ -1,3 +1,10 @@
+import { Shared } from '../../shared';
+
 export const Catalog = () => {
-  return <>Catalog page</>;
+  return (
+    <>
+      <Shared.Header />
+      Catalog page
+    </>
+  );
 };
