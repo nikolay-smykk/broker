@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Modal, Button } from 'antd';
 
 type PropsTypesModal = {
   title: string;
@@ -28,20 +27,5 @@ export const ModalComponents = ({
     setIsModalVisible(false);
   };
 
-  return (
-    <>
-      <Button type='primary' onClick={showModal}>
-        {title}
-      </Button>
-      <Modal
-        title={title}
-        visible={isModalVisible}
-        onOk={handleOk}
-        onCancel={handleCancel}>
-        <p>Last: {last}</p>
-        <p>highestBid: {highestBid}</p>
-        <p>percentChange: {percentChange}</p>
-      </Modal>
-    </>
-  );
+  return <>modal</>;
 };
