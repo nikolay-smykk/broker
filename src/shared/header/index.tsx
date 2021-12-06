@@ -1,5 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 
+import { Popover } from '@headlessui/react';
+
 // const solutions = [
 //   {
 //     name: 'Analytics',
@@ -76,8 +78,6 @@
 //   },
 //   { id: 3, name: 'Improve your customer experience', href: '#' },
 // ];
-
-import { Popover } from 'antd';
 
 export const HeaderPage = () => {
   return (
