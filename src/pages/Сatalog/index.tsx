@@ -1,6 +1,10 @@
 // import { Shared } from '../../shared';
 
+import React from 'react';
+
 export const Catalog = () => {
+  const [openCart, setOpenCart] = React.useState(true);
+
   return (
     <>
       <div className="bg-white">
@@ -27,13 +31,16 @@ export const Catalog = () => {
                     fill="currentColor"
                   />
                 </svg>
-                <span className="mx-1 text-sm">NY</span>
+                <span className="mx-1 text-sm">Москва</span>
               </div>
               <div className="w-full text-gray-700 md:text-center text-2xl font-semibold">
                 Minimalizm Studio
               </div>
               <div className="flex items-center justify-end w-full">
-                <button className="text-gray-600 focus:outline-none mx-4 sm:mx-0">
+                <button
+                  onClick={() => setOpenCart(!openCart)}
+                  className="text-gray-600 focus:outline-none mx-4 sm:mx-0"
+                >
                   <svg
                     className="h-5 w-5"
                     fill="none"
@@ -69,31 +76,31 @@ export const Catalog = () => {
                   className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
                   href="#"
                 >
-                  Home
+                  Главная
                 </a>
                 <a
                   className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
                   href="#"
                 >
-                  Shop
+                  Магазин
                 </a>
                 <a
                   className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
                   href="#"
                 >
-                  Categories
+                  Категории
                 </a>
                 <a
                   className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
                   href="#"
                 >
-                  Contact
+                  Контакты
                 </a>
                 <a
                   className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
                   href="#"
                 >
-                  About
+                  О нас
                 </a>
               </div>
             </nav>
@@ -117,17 +124,21 @@ export const Catalog = () => {
               <input
                 className="w-full border rounded-md pl-10 pr-4 py-2 focus:border-blue-500 focus:outline-none focus:shadow-outline"
                 type="text"
-                placeholder="Search"
+                placeholder="Поиск по артикулу"
               />
             </div>
           </div>
         </header>
-        // add hidden and state
-        <div className=" fixed right-0 top-0 max-w-xs w-full h-full px-6 py-4 transition duration-300 transform overflow-y-auto bg-white border-l-2 border-gray-300">
+        <div
+          className={` ${
+            openCart ? 'hidden' : ''
+          } fixed right-0 top-0 max-w-xs w-full h-full px-6 py-4 transition duration-300 transform overflow-y-auto bg-white border-l-2 border-gray-300`}
+        >
           <div className="flex items-center justify-between">
-            <h3 className="text-2xl font-medium text-gray-700">Your cart</h3>
+            <h3 className="text-2xl font-medium text-gray-700">Корзина</h3>
             <button className="text-gray-600 focus:outline-none">
               <svg
+                onClick={() => setOpenCart(!openCart)}
                 className="h-5 w-5"
                 fill="none"
                 stroke-linecap="round"
@@ -309,7 +320,7 @@ export const Catalog = () => {
                 <span className="text-gray-500 mt-3">$125</span>
                 <hr className="my-3" />
                 <div className="mt-2">
-                  <label className="text-gray-700 text-sm">Count:</label>
+                  <label className="text-gray-700 text-sm">Размер:</label>
                   <div className="flex items-center mt-1">
                     <button className="text-gray-500 focus:outline-none focus:text-gray-600">
                       <svg
@@ -341,16 +352,16 @@ export const Catalog = () => {
                   </div>
                 </div>
                 <div className="mt-3">
-                  <label className="text-gray-700 text-sm">Color:</label>
+                  <label className="text-gray-700 text-sm">Цвет:</label>
                   <div className="flex items-center mt-1">
                     <button className="h-5 w-5 rounded-full bg-blue-600 border-2 border-blue-200 mr-2 focus:outline-none" />
-                    <button className="h-5 w-5 rounded-full bg-teal-600 mr-2 focus:outline-none" />
+                    <button className="h-5 w-5 rounded-full bg-red-600 mr-2 focus:outline-none" />
                     <button className="h-5 w-5 rounded-full bg-pink-600 mr-2 focus:outline-none" />
                   </div>
                 </div>
                 <div className="flex items-center mt-6">
                   <button className="px-8 py-2 bg-indigo-600 text-white text-sm font-medium rounded hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500">
-                    Order Now
+                    Купить
                   </button>
                   <button className="mx-2 text-gray-600 border rounded-md p-2 hover:bg-gray-200 focus:outline-none">
                     <svg
@@ -369,9 +380,7 @@ export const Catalog = () => {
               </div>
             </div>
             <div className="mt-16">
-              <h3 className="text-gray-600 text-2xl font-medium">
-                More Products
-              </h3>
+              <h3 className="text-gray-600 text-2xl font-medium">Похожие</h3>
               <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
                 <div className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
                   <div className="flex items-end justify-end h-56 w-full bg-cover">
@@ -469,7 +478,7 @@ export const Catalog = () => {
             >
               Minimalizm Studio
             </a>
-            <p className="py-2 text-gray-500 sm:py-0">All rights reserved</p>
+            <p className="py-2 text-gray-500 sm:py-0">2021</p>
           </div>
         </footer>
       </div>
