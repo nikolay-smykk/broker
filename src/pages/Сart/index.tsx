@@ -1,3 +1,9 @@
+import { Shared } from '../../shared';
+
 export const Cart = () => {
-  return <>Cart page</>;
+  return (
+    <>
+      <Shared.Layout>Cart page</Shared.Layout>
+    </>
+  );
 };

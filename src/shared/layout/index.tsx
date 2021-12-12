@@ -1,5 +1,13 @@
 import { Shared } from '../';
 
 export const LayoutPage = (props: any) => {
-  return <>layout</>;
+  return (
+    <>
+      <div className="bg-white">
+        <Shared.Header />
+        {props.children}
+        <Shared.Footer />
+      </div>
+    </>
+  );
 };
