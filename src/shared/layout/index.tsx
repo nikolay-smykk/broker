@@ -1,4 +1,4 @@
-import { Shared } from '../';
+import { Shared } from 'shared';
 
 export const LayoutPage = (props: any) => {
   return (
