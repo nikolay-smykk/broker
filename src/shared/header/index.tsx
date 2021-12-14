@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const HeaderPage = () => {
   const [openCart, setOpenCart] = React.useState(true);
@@ -68,36 +69,41 @@ export const HeaderPage = () => {
           </div>
           <nav className="sm:flex sm:justify-center sm:items-center mt-4">
             <div className="flex flex-col sm:flex-row">
-              <a
+              <Link
+                to="/"
                 className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
                 href="#"
               >
                 Главная
-              </a>
-              <a
+              </Link>
+              <Link
+                to="/catalog"
                 className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
                 href="#"
               >
                 Магазин
-              </a>
-              <a
+              </Link>
+              <Link
+                to="/catalog"
                 className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
                 href="#"
               >
                 Категории товара
-              </a>
-              <a
+              </Link>
+              <Link
+                to="/"
                 className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
                 href="#"
               >
                 Контакты
-              </a>
-              <a
+              </Link>
+              <Link
+                to="/cart"
                 className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
                 href="#"
               >
                 About Us
-              </a>
+              </Link>
             </div>
           </nav>
           <div className="relative mt-6 max-w-lg mx-auto">
